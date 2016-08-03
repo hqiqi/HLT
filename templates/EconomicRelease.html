@@ -1,0 +1,19 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+{% load render_table from django_tables2 %}
+
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'css/ECTables.css' %}"/>
+    </head>
+    
+    <body>
+    		
+        	{% render_table Ectable1 %}
+        	
+    </body>
+    
+</html>
+
+
+

@@ -1,0 +1,190 @@
+{% extends "b1.html" %}
+
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% load render_table from django_tables2 %}
+
+{% block head_title %}
+	Welcome |
+{% endblock %}
+
+
+{% block jumbotron %}
+      <div class="jumbotron">
+        <h1>Hello Trader</h1>
+        <p>Welcome to the world of Forex Trading.</p>
+        <p>The foreign exchange market (forex, FX, or currency market) is a global decentralized market for the trading of currencies. This includes all aspects of buying, selling and exchanging currencies at current or determined prices.</p>
+        <p>Find a new way to be profitable.</p>
+        <p>
+          <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">Find out &raquo;</a>
+        </p>
+      </div>
+{% endblock %}
+
+{% block content %}
+  <span class="col-md-3 pull-left">
+      <script type="text/javascript">
+    var fxcalendar_config = {
+        host: "http://calendar.fxstreet.com",
+        css: 'mini',
+        rows: 10,
+        pastevents: 5,
+        hoursbefore: 20,        
+        timezone: 'Singapore Standard Time',
+        showcountryname: 'false',
+        columns: 'date,time,country,event,consensus,previous,volatility,actual',
+        isfree: 'true',
+        countrycode: 'AU,CA,JP:EMU,NZ,CH,UK,US',
+        culture:'en-US'
+    };
+    </script>
+    <script type="text/javascript" src="http://calendar.fxstreet.com/scripts/mini"></script>
+    <div id="fxst_calendar" style="width: 645px"></div>
+    <br><br>
+    <p>
+          <a class="btn btn-lg btn-primary" href="http://127.0.0.1:8000/EconomicReleases/" role="button">More &raquo;</a>
+        </p>
+  </span>
+  <span class="row">
+    	<span class="col-md-3 pull-right">
+  		<h1>{{home_title}}</h1>
+
+  		<form method="POST" action=''>{% csrf_token%}
+  		{{form|crispy}}
+  		<input class ="btn btn-primary"type='submit' value='sign up'>
+
+  			
+  		</form>
+
+  	 </span>
+</span>
+
+<div class="container">
+</div>
+
+<!-- TradingView Widget BEGIN -->
+<div id="tv-miniwidget-4c331"></div>
+<script type="text/javascript" src="https://d33t3vvu2t2yu5.cloudfront.net/tv.js"></script>
+<script type="text/javascript">
+new TradingView.MiniWidget({
+  "container_id": "tv-miniwidget-4c331",
+  "tabs": [
+    "Equities",
+    "Commodities",
+    "Bonds",
+    "Forex"
+  ],
+  "symbols": {
+    "Equities": [
+      [
+        "S&P500",
+        "SPX500"
+      ],
+      [
+        "NQ100",
+        "NAS100"
+      ],
+      [
+        "Dow30",
+        "DOWI"
+      ],
+      [
+        "Nikkei225",
+        "JPN225"
+      ],
+      [
+        "Apple",
+        "AAPL "
+      ],
+      [
+        "Google",
+        "GOOG"
+      ]
+    ],
+    "Commodities": [
+      [
+        "Emini",
+        "ES1!"
+      ],
+      [
+        "Euro",
+        "E61!"
+      ],
+      [
+        "Gold",
+        "GC1!"
+      ],
+      [
+        "Oil",
+        "CL1!"
+      ],
+      [
+        "Gas",
+        "NG1!"
+      ],
+      [
+        "Corn",
+        "ZC1!"
+      ]
+    ],
+    "Bonds": [
+      [
+        "Eurodollar",
+        "CME:GE1!"
+      ],
+      [
+        "T-Bond",
+        "CBOT:ZB1!"
+      ],
+      [
+        "Ultra T-Bond",
+        "CBOT:UD1!"
+      ],
+      [
+        "Euro Bund",
+        "FX:BUND"
+      ],
+      [
+        "Euro BTP",
+        "EUREX:II1!"
+      ],
+      [
+        "Euro BOBL",
+        "EUREX:HR1!"
+      ]
+    ],
+    "Forex": [
+      "FX:EURUSD",
+      "FX:GBPUSD",
+      "FX:USDJPY",
+      "FX:USDCHF",
+      "FX:AUDUSD",
+      "FX:USDCAD"
+    ]
+  },
+  "gridLineColor": "#E9E9EA",
+  "fontColor": "#83888D",
+  "underLineColor": "#dbeffb",
+  "trendLineColor": "#4bafe9",
+  "activeTickerBackgroundColor": "#EDF0F3",
+  "large_chart_url": "https://www.tradingview.com/chart/",
+  "noGraph": false,
+  "width": "800px",
+  "height": "600px",
+  "locale": "en"
+});
+</script>
+<!-- TradingView Widget END -->
+{{now}}
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+

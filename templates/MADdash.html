@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+{% load js %}
+{% load staticfiles %}
+{% load render_table from django_tables2 %}
+
+<html>
+    <head>
+    	
+        <link rel="stylesheet" href="{% static 'css/ECTables.css' %}"/>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.js"></script>
+		<script type="text/javascript">
+
+		$(document).ready(function(){
+    	$('.table-container td').each(function(){
+        if (parseInt($(this).text()) < 0) {
+            $(this).css('background-color','#F21E1E');    
+        }
+        if(parseInt($(this).text()) >= 0){
+        	$(this).css('background-color','#4CAF50');
+        }
+    	});
+		});
+
+	   $.ajax({
+
+	   url: 'http://127.0.0.1:8000/indicators/MADdash/',
+	          success: function(data) {
+	          $('#main').html(data);
+	          }
+	   });
+</script>
+    </head>
+    
+    <body>
+    <div id="Md" align="center">
+    	<table id="main" align="center">
+    		<tr>
+    		<td>
+        	{% render_table Mtable1 %}
+        	</td>
+        	<td>
+        	{% render_table Mtable2 %}
+        	</td>
+        	</tr>
+        	<tr>
+        	<td>
+        	{% render_table Mtable3 %}
+        	</td>
+        	<td>
+        	{% render_table Mtable4 %}
+        	</td>
+        	</tr>
+        	<tr>
+        	<td>
+        	{% render_table Mtable5 %}
+        	</td>
+        	<td>
+        	{% render_table Mtable6 %}
+        	</td>
+        	</tr>
+        	<tr>
+        	<td>
+        	{% render_table Mtable7 %}
+        	</td>
+        	<td>
+        	{% render_table Mtable8 %}
+        	</td>
+        	</tr>
+        </table>
+    </div>   		
+    </body>
+   
+</html>
+

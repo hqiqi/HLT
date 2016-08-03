@@ -1,0 +1,93 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>LotSizeCalculator</title>
+</head>
+<body>
+
+<div id="txtHint" align="center">
+	</br>
+	<b>Calculation table</b>
+	</br>
+	 <table border="1" align="center" style="width:50%;text-align:center">
+  <tr>
+  	<td rowspan="1">
+  	Values
+  	</td>
+  	
+  </tr>
+  <tr>
+    <td>Currency</td>
+    <td> 
+    	
+    	<select id="currencies">
+    	
+    	</select>
+    </td>
+  </tr>
+  <tr>
+    <td>Account Size</td>
+    <td><input type="number" id="asize"></td>
+  </tr>
+  <tr>
+    <td>Risk Ratio (%)</td>
+    <td><input type="number" id="rratio"></td>
+  </tr>
+  <tr>
+    <td>Stop Loss (pips)</td>
+    <td><input type="number" name="sloss"></td>
+  </tr>
+  <tr>
+    <td>Currency Pairs</td>
+    <td><select id="currencypair">
+    	
+    </select></td>
+  </tr>
+  <tr>
+  	<td>Current Price Ratio:</td>
+  	<td><label name="pratio"></label></td> 
+  </tr>
+  <tr>
+  	<td rowspan="1">
+  	<button id="calculate">Calculate</button>
+  	</td>
+  </tr>
+  <tr>
+  	
+  </tr>
+  
+  <tr>
+  
+  	<td>
+  		Amount
+  	</td>
+  	<td>
+  		<label id="amount"></label>
+  	</td>
+  </tr>
+  <tr>
+  	<td>
+  		Units
+  	</td>
+  	<td>
+  		<label name="units"></label>
+  	</td>	
+  </tr>
+  
+  <tr>
+  	<td>
+  		Lots
+  	</td>
+  	<td>
+  		<div name="lots"></div>
+  	</td>	
+  </tr>
+</table> 
+</div>	
+</body>
+<script language=javascript type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+<script language=javascript type="text/javascript" src="{% static 'js/tablescript.js' %}"></script>
+
+</html>

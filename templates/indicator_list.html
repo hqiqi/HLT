@@ -1,0 +1,30 @@
+{% extends "b1.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% load render_table from django_tables2 %}
+
+
+
+{% block jumbotron %}
+      <div class="jumbotron">
+      <span span style="float:right">
+	  	<img src="{% static 'img/dish.jpg' %}" >
+	  </span>
+        <h1>MADdash<h1>
+        <p>What is MADdash? A multi timeframe dashboard</p> 
+        <p>looking at price's distance from a moving average.</p>
+        <p>The MA distances are averaged to give a derived MA distance for each currency</p>
+		<a class="btn btn-lg btn-primary" href={% url 'indicators:MADdash' %} role="button">Find out &raquo;</a>
+      </div>
+      <br>
+      <div class="jumbotron">
+      <span span style="float:right">
+	  	<img src="{% static 'img/ci.png' %}" >
+	  </span>
+        <h2>Currency Index<h2>
+        <p>The currency index represents the evolution of a currency relative to the entire forex.</p>
+        <p>The index is the average of one currency compared to others.</p> 
+        <p>The chart representation makes it easy to view trends by currency.</p>
+		<a class="btn btn-lg btn-primary" href={% url 'indicators:MADdash' %} role="button">Find out &raquo;</a>
+      </div>
+{% endblock %}
