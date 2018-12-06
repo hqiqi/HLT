@@ -1,2 +1,5 @@
 # HLT
-simple 
+simple trading wesbite
+price chart 
+news calanders 
+Maddash
