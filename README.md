@@ -1,8 +1,8 @@
 # HLT
 simple trading wesbite
 
--price chart 
+- Price chart 
 
--news calanders 
+- News calanders 
 
--Maddash
+- Maddash
