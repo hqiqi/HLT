@@ -1,5 +1,5 @@
 # HLT
-simple trading wesbite
+Simple trading wesbite
 
 - Price chart 
 
